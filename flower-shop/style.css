@@ -377,27 +377,3 @@ body {
   }
 }
 
-/* ------------------------------------------------ */
-/* 🔥 DARK MODE SUPPORT */
-/* ------------------------------------------------ */
-
-@media (prefers-color-scheme: dark) {
-  .battery {
-    background: #1e293b; /* slate-800 */
-    border-color: #475569; /* slate-600 */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  }
-
-  .battery-cap {
-    background: #475569;
-  }
-
-  .liquid-fill {
-    background: #84cc16; /* lime-500 */
-    box-shadow: 0 0 20px rgba(132, 204, 22, 0.6);
-  }
-
-  .battery-glow {
-    background: rgba(255, 255, 255, 0.1);
-  }
-}
