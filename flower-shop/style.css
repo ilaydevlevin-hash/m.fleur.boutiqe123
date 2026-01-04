@@ -44,10 +44,26 @@ nav a {
 }
 
 /* ---------- Hero ---------- */
+/* סגנון רגיל */
 .hero {
   background: linear-gradient(#fceef3, #eaf6fb);
   padding: 40px 20px;
   text-align: center;
+  height: 400px; /* חשוב כדי שה-background יהיה ברור */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+/* סגנון למסכים קטנים (טלפון) */
+@media (max-width: 600px) {
+  .hero {
+    padding: 20px 10px; /* פחות ריווח */
+    height: 250px; /* גובה קטן יותר */
+    font-size: 14px; /* טקסט קטן יותר */
+  }
 }
 
 .logo {
@@ -303,10 +319,20 @@ nav a {
   .cards { grid-template-columns: 1fr; }
 
   .card1 { margin: 50px auto -100px auto; }
+ @media (max-width: 768px) {
+  .hero {
+    background: linear-gradient(rgba(252,238,243,0.7), rgba(234,246,251,0.7)), url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 10px;
+    height: 300px;
+    font-size: 14px;
+  }
 }
+   }
 .hero123 {
   /* מיקום ורקע */
-  background-image: url('logo.png'); /* כאן שמים את קובץ התמונה שלך */
+  background-image: url('image1.png'); /* כאן שמים את קובץ התמונה שלך */
   background-size: cover; /* התמונה מתאימה לגודל ה-section */
   background-position: center; /* התמונה במרכז */
   background-repeat: no-repeat; /* לא חוזרת על עצמה */
@@ -319,7 +345,7 @@ nav a {
   align-items: center; /* ממרכז טקסט אופקית */
   
   /* צבע טקסט כדי שיהיה קריא */
-  color: white;
+  color: black;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   padding: 100px;
 }
