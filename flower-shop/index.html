@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>M FLEUR BOUTIQUE 🌸</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -9,13 +10,18 @@
 
 <header>
   <nav>
+  <button class="menu-btn">☰</button>
+  <div class="nav-links">
     <a href="#home">בית</a>
     <a href="#about">עלינו</a>
     <a href="#gallery">גלריה</a>
     <a href="#services">שירותים</a>
     <a href="#contact">צור קשר</a>
     <a href="moreabout-us.html">עוד לגבינו</a>
-  </nav>
+  </div>
+</nav>
+      
+    
 </header>
 
 <section id="home" class="hero">
@@ -25,7 +31,12 @@
   <h1>M FLEUR BOUTIQUE 🌸</h1>
   <p>זרים עדינים, טריים ומעוצבים באהבה</p>
 </section>
-
+<div class="first-info">
+  <h1>עיצוב פרחים</h1>
+  <p class="info">בסטודיו הפרחים היוקרתי שלנו , כל זר הוא יצירת אמנות ייחודית. פרחים טריים, עיצובים מדויקים ורגעים בלתי
+     נשכחים.
+פרחים ליולדת, פרחים לימי הולדת, ליום נישואין, למשרה חדשה, פרחים ליום האם. חשבנו על הכל! חנות פרחים בבאר שבע כאן כדי לפנק ולרגש את היקרים לכם.</p>
+</div>
 <section id="gallery" class="gallery">
   <img src="image1.png" class="flower-image" alt="">
   <img src="pinkflower.png" class="flower-image" alt="">
@@ -75,19 +86,7 @@
 
     <button type="submit">שלח</button>
   </form>
-  <div class="battery-container">
-  <div class="battery">
-    <div class="battery-cap"></div>
-
-    <div class="liquid-fill">
-      <div class="bubble bubble1"></div>
-      <div class="bubble bubble2"></div>
-      <div class="bubble bubble3"></div>
-    </div>
-
-    <div class="battery-glow"></div>
-  </div>
-</div>
+  <
 
 </section>
 
@@ -105,8 +104,15 @@
 <footer class="footer1">
   © M FLEUR BOUTIQUE 🌸
 </footer>
-<script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script> 
+<script>
+
+  const btn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  btn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

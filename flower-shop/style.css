@@ -11,18 +11,20 @@ header {
   padding: 15px;
 }
 
-nav {
+.nav-links {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
   color: #4a7ea8;
   font-weight: bold;
 }
-
+.menu-btn {
+  display: none; /* במחשב לא רואים */
+}
 .hero {
   background: linear-gradient(#fceef3, #eaf6fb);
   padding: 40px;
@@ -376,4 +378,81 @@ body {
     opacity: 0;
   }
 }
-/* no dark mode*/
+@media (max-width: 768px) {
+  nav {
+    justify-content: flex-start;
+    padding: 10px;
+    position: relative;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* 👈 זה החלק שהיה חסר */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+/* מחשב נשאר אותו דבר */
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: flex-start;
+    position: relative;
+    padding: 10px;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4a7ea8;
+  }
+
+  .nav-links {
+    display: none;        /* מוסתר כברירת מחדל */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .nav-links.active {
+    display: flex;        /* נפתח בלחיצה */
+  }
+}
+.info {
+  color: black;
+   background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: #fbe5ec;
+}
