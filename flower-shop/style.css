@@ -1,9 +1,13 @@
+/* ---------- Global ---------- */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   direction: rtl;
   background: #ffffff;
   color: #444;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -11,6 +15,7 @@ header {
   padding: 15px;
 }
 
+/* ---------- Nav ---------- */
 .nav-links {
   display: flex;
   justify-content: center;
@@ -22,12 +27,26 @@ header {
   color: #4a7ea8;
   font-weight: bold;
 }
-.menu-btn {
-  display: none; /* במחשב לא רואים */
+
+nav a {
+  text-decoration: none;
+  color: #4a7ea8;
+  font-weight: bold;
 }
+
+.menu-btn {
+  display: none; /* במחשב */
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4a7ea8;
+}
+
+/* ---------- Hero ---------- */
 .hero {
   background: linear-gradient(#fceef3, #eaf6fb);
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -46,6 +65,18 @@ header {
   object-fit: cover;
 }
 
+/* ---------- First Info ---------- */
+.first-info {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #fbe5ec;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* ---------- Gallery ---------- */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -67,12 +98,14 @@ header {
   transform: scale(1.05);
 }
 
+/* ---------- Sections ---------- */
 .section {
-  padding: 40px;
+  padding: 40px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
+/* ---------- Cards ---------- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -80,19 +113,17 @@ header {
 }
 
 .card {
-  background: white;
+  background-color: #fbe5ec;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
-  background-color: #fbe5ec;
-}
-.cards:hover {
-  opacity: 0.7;
 }
 
+/* ---------- Contact ---------- */
 .contact {
   max-width: 500px;
+  margin: auto;
 }
 
 .contact-form {
@@ -103,7 +134,7 @@ header {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 23px;
+  padding: 15px;
   border-radius: 20px;
   border: 1px solid #ddd;
 }
@@ -120,34 +151,13 @@ header {
 .contact-form button:hover {
   background: #eaa3ba;
 }
-.footer1 {
-  background: #f2f8fc;
-  color: #4a7ea8;
-  text-align: center;
-  padding: 25px 10px;
-  font-weight: bold;
-  margin-top: 60px;
-  border-top: 1px solid #e3edf5;
-}
 
-/* אם העמוד קצר – הפוטר יישאר למטה */
-html, body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer1 {
-  margin-top: auto;
-}
+/* ---------- Contact Info (About Us page) ---------- */
 .contact-info {
   max-width: 500px;
   margin: 20px auto 0 auto;
   padding: 25px;
-  background: #f2f8fc; /* לבן עם גוון חום בהיר */
+  background: #f2f8fc;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   text-align: right;
@@ -164,23 +174,24 @@ body {
 .contact-info a:hover {
   text-decoration: underline;
 }
+
+/* ---------- Card1 (Social Links) ---------- */
 .card1 {
   width: fit-content;
   height: fit-content;
   background-color: rgb(238, 238, 238);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 25px 25px;
+  padding: 25px;
   gap: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-  flex-direction: column;
-  margin-top: -213px;
-  margin-bottom: 50px;
+  margin: 50px auto -200px auto;
   border-radius: 20px;
 }
 
-/* for all social containers*/
+/* ---------- Social Containers ---------- */
 .socialContainer {
   width: 52px;
   height: 52px;
@@ -192,208 +203,76 @@ body {
   overflow: hidden;
   transition-duration: 0.3s;
 }
-/* instagram*/
-.containerOne:hover {
-  background-color: #f3b6c8;
-  transition-duration: 0.3s;
-}
-/* twitter*/
-.containerTwo:hover {
-  background-color: #00acee;
-  transition-duration: 0.3s;
-}
-/* linkdin*/
-.containerThree:hover {
-  background-color: #0072b1;
-  transition-duration: 0.3s;
-}
-/* Whatsapp*/
-.containerFour:hover {
-  background-color: #4a7ea8;
-  transition-duration: 0.3s;
-}
 
-.socialContainer:active {
-  transform: scale(0.9);
-  transition-duration: 0.3s;
-}
+.containerOne:hover { background-color: #f3b6c8; }
+.containerTwo:hover { background-color: #00acee; }
+.containerThree:hover { background-color: #0072b1; }
+.containerFour:hover { background-color: #4a7ea8; }
 
-.socialSvg {
-  width: 17px;
-}
-
-.socialSvg path {
-  fill: rgb(255, 255, 255);
-}
+.socialContainer:active { transform: scale(0.9); }
+.socialSvg { width: 17px; }
+.socialSvg path { fill: #fff; }
 
 .socialContainer:hover .socialSvg {
   animation: slide-in-top 0.3s both;
 }
 
 @keyframes slide-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
 
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* ---------- Footer ---------- */
+.footer1 {
+  background: #f2f8fc;
+  color: #4a7ea8;
+  text-align: center;
+  padding: 25px 10px;
+  font-weight: bold;
+  margin-top: auto;
+  border-top: 1px solid #e3edf5;
 }
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-  h1 {
-    font-size: 28px;
-  }
-}
-/* Outer wrapper */
-.battery-container {
+
+/* ---------- Flower ---------- */
+.flower {
   position: relative;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
 }
 
-/* Battery Body */
-.battery {
-  position: relative;
-  width: 60px;
-  height: 130px;
-  background: white;
-  border: 4px solid #94a3b8;
-  border-radius: 15px;
-  display: flex;
-  align-items: flex-end;
-  padding: 5px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  margin-left: -500px;
-  margin-top: -197px;
-}
-
-/* Battery Cap */
-.battery-cap {
+.petal {
   position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 10px;
-  background: #94a3b8;
-  border-radius: 3px 3px 0 0;
-}
-
-/* Liquid Fill (Light Mode Default) */
-.liquid-fill {
-  width: 100%;
-  height: 0%;
-  background: #f3b6c8; /* blue */
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 15px (59, 130, 246, 0.5);
-  animation: charge 4s linear infinite;
-}
-
-/* Bubbles */
-.bubble {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.4);
+  width: 80px;
+  height: 80px;
+  background: #f3b6c8;
   border-radius: 50%;
-  bottom: 5px;
-  animation: bubble-rise 2s ease-in infinite;
+  transform-origin: center;
 }
 
-.bubble1 {
-  width: 10px;
-  height: 10px;
-  left: 6px;
-}
-
-.bubble2 {
-  width: 14px;
-  height: 14px;
-  right: 8px;
-  animation-delay: 0.5s;
-  animation-duration: 2.5s;
-}
-
-.bubble3 {
-  width: 8px;
-  height: 8px;
-  left: 22px;
-  animation-delay: 1s;
-  animation-duration: 1.8s;
-}
-
-/* Glossy highlight */
-.battery-glow {
+.center {
   position: absolute;
-  top: 10px;
-  right: 8px;
-  width: 10px;
-  height: 120px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-  pointer-events: none;
+  width: 50px;
+  height: 50px;
+  background: #4a7ea8;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Charge animation */
-@keyframes charge {
-  0% {
-    height: 0%;
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    height: 50%;
-  }
-  90% {
-    height: 100%;
-    filter: hue-rotate(45deg);
-  }
-  95% {
-    height: 100%;
-    opacity: 1;
-  }
-  100% {
-    height: 100%;
-    opacity: 0;
-  }
-}
-
-/* Bubble rise animation */
-@keyframes bubble-rise {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-80px);
-    opacity: 0;
-  }
-}
+/* ---------- Media Queries ---------- */
 @media (max-width: 768px) {
   nav {
     justify-content: flex-start;
-    padding: 10px;
     position: relative;
+    padding: 10px;
   }
 
   .menu-btn {
     display: block;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 
-  /* 👈 זה החלק שהיה חסר */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -406,53 +285,41 @@ body {
     gap: 12px;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
-}
-/* מחשב נשאר אותו דבר */
-.menu-btn {
-  display: none;
-}
+  .nav-links.active { display: flex; }
 
-@media (max-width: 768px) {
-  nav {
-    justify-content: flex-start;
-    position: relative;
-    padding: 10px;
-  }
+  h1 { font-size: 28px; }
 
-  .menu-btn {
-    display: block;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #4a7ea8;
-  }
-
-  .nav-links {
-    display: none;        /* מוסתר כברירת מחדל */
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background: white;
+  .first-info {
+    max-width: 90%;
     padding: 15px;
-    gap: 12px;
+    margin: 20px auto;
   }
 
-  .nav-links.active {
-    display: flex;        /* נפתח בלחיצה */
+  .flower-image {
+    width: 45%;
+    height: auto;
   }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .card1 { margin: 50px auto -100px auto; }
 }
-.info {
-  color: black;
-   background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  background-color: #fbe5ec;
+.hero123 {
+  /* מיקום ורקע */
+  background-image: url('logo.png'); /* כאן שמים את קובץ התמונה שלך */
+  background-size: cover; /* התמונה מתאימה לגודל ה-section */
+  background-position: center; /* התמונה במרכז */
+  background-repeat: no-repeat; /* לא חוזרת על עצמה */
+  
+  /* גובה ומרווחים */
+  height: 400px; /* אפשר לשנות לגובה שמתאים לך */
+  display: flex; /* מאפשר למקם טקסט באמצע */
+  flex-direction: column;
+  justify-content: center; /* ממרכז טקסט אנכית */
+  align-items: center; /* ממרכז טקסט אופקית */
+  
+  /* צבע טקסט כדי שיהיה קריא */
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  padding: 100px;
 }
